@@ -37,3 +37,5 @@ class RestaurantItemPhotoViewModel:RestaurantItemPhotoPresentable{
 	var photoItems:Variable<[RestaurantItemPresentable]> = Variable([]);
 
 }
+
+

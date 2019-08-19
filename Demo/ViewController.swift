@@ -82,10 +82,11 @@ class ViewController: UIViewController {
 		func tableViewSetup(){
 			let nib = UINib.init(nibName: NIB_Name.RestaurantTableViewCell, bundle: nil)
 			self.tableViewCabList.register(nib, forCellReuseIdentifier: cellIdentifier)
-			self.tableViewCabList.separatorStyle = .none;
+			self.tableViewCabList.separatorStyle = .singleLine;
 			
-			tableViewCabList.estimatedRowHeight = 60
+			//tableViewCabList.estimatedRowHeight = 266
 			tableViewCabList.rowHeight = UITableView.automaticDimension
+			
 		}
 		
 		//MARK: Button Actions
@@ -107,6 +108,9 @@ class ViewController: UIViewController {
 		func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 			let restauranttableViewCell = cell as! RestaurantListingCell
 			//restauranttableViewCell.slide(to: .right)
+		}
+		func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+			return 266;
 		}
 	}
 

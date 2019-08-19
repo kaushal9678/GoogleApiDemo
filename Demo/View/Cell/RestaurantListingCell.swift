@@ -23,13 +23,15 @@ class RestaurantListingCell: UITableViewCell {
 	@IBOutlet weak var labelRatings: UILabel!
 	@IBOutlet weak var collectionView_: UICollectionView!
 	var viewModelPhoto: RestaurantItemPhotoViewModel!
-	var photos:Variable<[RestaurantItemPhotoPresentable]> = Variable([])
+	//var photos:Variable<[RestaurantItemPhotoPresentable]> = Variable([])
 	@IBOutlet weak var imagePlaceholderView: UIView!
-	
+	var photos:[Photo]?
 	let cellIdentifier = "RestaurantImageCell"
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
+		collectionViewSetup();
+		self.collectionView_.dataSource = self;
 	}
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -48,6 +50,16 @@ class RestaurantListingCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		disposeBag = DisposeBag()
+		
+	}
+	
+	func collectionViewSetup(){
+		let nib = UINib.init(nibName: NIB_Name.RestaurantImageViewCell, bundle: nil)
+		self.collectionView_.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+		//self.collectionView_.separatorStyle = .singleLine;
+		
+		//tableViewCabList.estimatedRowHeight = 266
+		//tableViewCabList.rowHeight = UITableView.automaticDimension
 		
 	}
 	/*!
@@ -70,48 +82,55 @@ class RestaurantListingCell: UITableViewCell {
 			}
 			self.restaurantImage.pin_updateWithProgress = true
 			self.restaurantImage.pin_setImage(from: URL(string: viewModel.items?.icon ?? ""))
-			
-			
-			
-			/*self.photos.value = viewModel.items!.photos.map({ (items)  in
-				RestaurantItemPhotoViewModel(items: items)
-				
-			})*/
 			if let photo = viewModel.items?.photos{
-				for object in photo{
-					self.photos.value = RestaurantItemPhotoViewModel(items: object as Photo)
-				}
+				self.photos = photo;
+				
 			}
-			
-			viewModel.items.asObservable().bind(to:tableViewCabList.rx.items(cellIdentifier:cellIdentifier,cellType:RestaurantListingCell.self)){index,item,cell in
-				
-				cell.configure(withViewModel: item)
-				
-				}.disposed(by: disposeBag)
+			self.collectionView_.reloadData()
 		}
-		
-		
-		
 	}
+	
 }
 
-
-
-
-/*extension RestaurantTableViewCell: GradientsOwner {
-var gradientLayers: [CAGradientLayer] {
-return [titlePlaceholderView.gradientLayer, subtitlePlaceholderView.gradientLayer]
-}
-}
-*/
-
-
-
-
-extension UIColor {
-	func brightened(by factor: CGFloat) -> UIColor {
-		var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-		getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-		return UIColor(hue: h, saturation: s, brightness: b * factor, alpha: a)
+extension RestaurantListingCell: UICollectionViewDataSource{
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return 1;
 	}
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return  self.photos?.count ?? 0
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)as! RestaurantImageCell;
+		let object = self.photos?[indexPath.item];
+		let photoReferece = object?.photoReference ?? "";
+		let urlOfImage = String.init(format: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%@&key=%@",photoReferece,GoogleKeys.KEY_GOOGLE_MAP_SERVER_KEY );
+		
+		cell.restaurantImage.pin_updateWithProgress = true
+		cell.restaurantImage.pin_setImage(from: URL(string: urlOfImage)!)
+		
+		return cell;
+	}
+	
+	
+}
+	
+	
+	
+	/*extension RestaurantTableViewCell: GradientsOwner {
+	var gradientLayers: [CAGradientLayer] {
+	return [titlePlaceholderView.gradientLayer, subtitlePlaceholderView.gradientLayer]
+	}
+	}
+	*/
+	
+	
+	
+	
+	extension UIColor {
+		func brightened(by factor: CGFloat) -> UIColor {
+			var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+			getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+			return UIColor(hue: h, saturation: s, brightness: b * factor, alpha: a)
+		}
 }

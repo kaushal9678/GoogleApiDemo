@@ -36,8 +36,10 @@
 		F58B8FF3230971BE0010F444 /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8FE9230971BD0010F444 /* OpeningHours.swift */; };
 		F58B8FF4230971BE0010F444 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8FEA230971BD0010F444 /* Result.swift */; };
 		F58B8FF5230971BE0010F444 /* PlusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8FEB230971BE0010F444 /* PlusCode.swift */; };
-		F5E32C1A230A527D00EDEA58 /* RestaurantImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C19230A527D00EDEA58 /* RestaurantImageCell.swift */; };
+		F5E32C1A230A527D00EDEA58 /* RestaurantImageCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C19230A527D00EDEA58 /* RestaurantImageCell1.swift */; };
 		F5E32C1C230A572600EDEA58 /* RestaurantItemPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C1B230A572600EDEA58 /* RestaurantItemPhotoViewModel.swift */; };
+		F5E32C22230A6A8100EDEA58 /* RestaurantImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C20230A6A8100EDEA58 /* RestaurantImageCell.swift */; };
+		F5E32C23230A6A8100EDEA58 /* RestaurantImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E32C21230A6A8100EDEA58 /* RestaurantImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +99,10 @@
 		F58B8FE9230971BD0010F444 /* OpeningHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		F58B8FEA230971BD0010F444 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F58B8FEB230971BE0010F444 /* PlusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusCode.swift; sourceTree = "<group>"; };
-		F5E32C19230A527D00EDEA58 /* RestaurantImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantImageCell.swift; sourceTree = "<group>"; };
+		F5E32C19230A527D00EDEA58 /* RestaurantImageCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantImageCell1.swift; sourceTree = "<group>"; };
 		F5E32C1B230A572600EDEA58 /* RestaurantItemPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantItemPhotoViewModel.swift; path = ViewModel/RestaurantPhotoViewModel/RestaurantItemPhotoViewModel.swift; sourceTree = "<group>"; };
+		F5E32C20230A6A8100EDEA58 /* RestaurantImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantImageCell.swift; sourceTree = "<group>"; };
+		F5E32C21230A6A8100EDEA58 /* RestaurantImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantImageCell.xib; sourceTree = "<group>"; };
 		FA2E81AAD0B48E0E3035C834 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		FD32C7FF82D4A4E14A6D8DA1 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -253,7 +257,9 @@
 			children = (
 				F58B8FD523092D380010F444 /* RestaurantListingCell.swift */,
 				F58B8FD623092D380010F444 /* RestaurantListingCell.xib */,
-				F5E32C19230A527D00EDEA58 /* RestaurantImageCell.swift */,
+				F5E32C19230A527D00EDEA58 /* RestaurantImageCell1.swift */,
+				F5E32C20230A6A8100EDEA58 /* RestaurantImageCell.swift */,
+				F5E32C21230A6A8100EDEA58 /* RestaurantImageCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			files = (
 				F503A5CA230699320048B388 /* LaunchScreen.storyboard in Resources */,
 				F58B8FD823092D380010F444 /* RestaurantListingCell.xib in Resources */,
+				F5E32C23230A6A8100EDEA58 /* RestaurantImageCell.xib in Resources */,
 				F503A5C7230699320048B388 /* Assets.xcassets in Resources */,
 				F503A5C5230699310048B388 /* Main.storyboard in Resources */,
 			);
@@ -531,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E32C22230A6A8100EDEA58 /* RestaurantImageCell.swift in Sources */,
 				F58B8FF1230971BE0010F444 /* Photo.swift in Sources */,
 				F58B8FC423092A010010F444 /* Reachability.swift in Sources */,
 				F58B8FF4230971BE0010F444 /* Result.swift in Sources */,
@@ -546,7 +554,7 @@
 				F58B8FEF230971BE0010F444 /* Root.swift in Sources */,
 				F58B8FC0230929070010F444 /* Macros.swift in Sources */,
 				F5E32C1C230A572600EDEA58 /* RestaurantItemPhotoViewModel.swift in Sources */,
-				F5E32C1A230A527D00EDEA58 /* RestaurantImageCell.swift in Sources */,
+				F5E32C1A230A527D00EDEA58 /* RestaurantImageCell1.swift in Sources */,
 				F503A5C0230699310048B388 /* AppDelegate.swift in Sources */,
 				F58B8FE1230936650010F444 /* Alert.swift in Sources */,
 				F58B8FF5230971BE0010F444 /* PlusCode.swift in Sources */,
@@ -731,6 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HSNVSPL7V2;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,6 +759,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HSNVSPL7V2;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

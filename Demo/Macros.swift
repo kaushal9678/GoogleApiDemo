@@ -19,6 +19,7 @@ struct Storyboard_identifier {
 }
 struct NIB_Name {
 	static let RestaurantTableViewCell = "RestaurantListingCell"
+	static let RestaurantImageViewCell = "RestaurantImageCell"
 }
 
 struct Url {

@@ -35,8 +35,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4u-jb-G1I" customClass="RoundedCornersView" customModule="Demo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of POI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-VO-aWe">
-                                        <rect key="frame" x="153.5" y="43" width="107" height="24.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="tt3-Vr-33m">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near By Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-VO-aWe">
+                                        <rect key="frame" x="101.5" y="43" width="211" height="24.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +51,7 @@
                                             <constraint firstAttribute="width" constant="80" id="uRh-RF-BU1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <state key="normal" title="Book Cab">
+                                        <state key="normal" image="filter">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -60,9 +63,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Jhf-Fo-KSv" secondAttribute="trailing" constant="10" id="4mv-an-pSP"/>
                                     <constraint firstItem="wJz-VO-aWe" firstAttribute="centerX" secondItem="H4u-jb-G1I" secondAttribute="centerX" id="997-Tr-1l3"/>
+                                    <constraint firstItem="tt3-Vr-33m" firstAttribute="top" secondItem="H4u-jb-G1I" secondAttribute="top" id="9ZY-1B-Xwl"/>
                                     <constraint firstAttribute="height" constant="90" id="D2M-z5-22y"/>
+                                    <constraint firstItem="tt3-Vr-33m" firstAttribute="leading" secondItem="H4u-jb-G1I" secondAttribute="leading" id="Rmo-4l-S2a"/>
                                     <constraint firstItem="wJz-VO-aWe" firstAttribute="centerY" secondItem="H4u-jb-G1I" secondAttribute="centerY" constant="10.25" id="X87-ZF-TwK"/>
+                                    <constraint firstAttribute="trailing" secondItem="tt3-Vr-33m" secondAttribute="trailing" id="dnB-lF-gk9"/>
                                     <constraint firstItem="Jhf-Fo-KSv" firstAttribute="centerY" secondItem="H4u-jb-G1I" secondAttribute="centerY" constant="10" id="k1n-gH-YFl"/>
+                                    <constraint firstAttribute="bottom" secondItem="tt3-Vr-33m" secondAttribute="bottom" id="kaf-1q-auK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -108,4 +115,8 @@
             <point key="canvasLocation" x="1197.5999999999999" y="-269.41529235382313"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="25" height="25"/>
+        <image name="header" width="414" height="110"/>
+    </resources>
 </document>
