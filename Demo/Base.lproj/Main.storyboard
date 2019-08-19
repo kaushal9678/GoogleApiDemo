@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vj2-mU-MkU">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,9 +13,9 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -19,6 +23,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kIY-kO-Ytz">
+            <objects>
+                <viewController storyboardIdentifier="cabListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vj2-mU-MkU" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLA-We-sNp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4u-jb-G1I" customClass="RoundedCornersView" customModule="Demo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of POI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-VO-aWe">
+                                        <rect key="frame" x="153.5" y="43" width="107" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-Fo-KSv">
+                                        <rect key="frame" x="324" y="34.5" width="80" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="bWg-7R-fvR"/>
+                                            <constraint firstAttribute="width" constant="80" id="uRh-RF-BU1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <state key="normal" title="Book Cab">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnBookCabAction:" destination="Vj2-mU-MkU" eventType="touchUpInside" id="zTW-qM-pbN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.36470588240000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jhf-Fo-KSv" secondAttribute="trailing" constant="10" id="4mv-an-pSP"/>
+                                    <constraint firstItem="wJz-VO-aWe" firstAttribute="centerX" secondItem="H4u-jb-G1I" secondAttribute="centerX" id="997-Tr-1l3"/>
+                                    <constraint firstAttribute="height" constant="90" id="D2M-z5-22y"/>
+                                    <constraint firstItem="wJz-VO-aWe" firstAttribute="centerY" secondItem="H4u-jb-G1I" secondAttribute="centerY" constant="10.25" id="X87-ZF-TwK"/>
+                                    <constraint firstItem="Jhf-Fo-KSv" firstAttribute="centerY" secondItem="H4u-jb-G1I" secondAttribute="centerY" constant="10" id="k1n-gH-YFl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-45-ruc">
+                                <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vj2-mU-MkU" id="m2C-xd-fD0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H4u-jb-G1I" firstAttribute="leading" secondItem="njw-mB-IV2" secondAttribute="leading" id="2fz-gA-T7h"/>
+                            <constraint firstItem="n0m-45-ruc" firstAttribute="trailing" secondItem="njw-mB-IV2" secondAttribute="trailing" id="BGx-3N-He8"/>
+                            <constraint firstItem="H4u-jb-G1I" firstAttribute="trailing" secondItem="njw-mB-IV2" secondAttribute="trailing" id="X1z-uZ-TR8"/>
+                            <constraint firstItem="H4u-jb-G1I" firstAttribute="top" secondItem="oLA-We-sNp" secondAttribute="top" id="Zsg-Mc-32r"/>
+                            <constraint firstItem="n0m-45-ruc" firstAttribute="leading" secondItem="njw-mB-IV2" secondAttribute="leading" id="ZvX-nD-B9k"/>
+                            <constraint firstItem="n0m-45-ruc" firstAttribute="top" secondItem="H4u-jb-G1I" secondAttribute="bottom" constant="1" id="hFf-La-OOV"/>
+                            <constraint firstItem="n0m-45-ruc" firstAttribute="bottom" secondItem="njw-mB-IV2" secondAttribute="bottom" id="iAv-SQ-tyJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="njw-mB-IV2"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="btnBookCab" destination="Jhf-Fo-KSv" id="u2Z-D5-cLK"/>
+                        <outlet property="labelTitle" destination="wJz-VO-aWe" id="7wP-ln-MIW"/>
+                        <outlet property="tableViewCabList" destination="n0m-45-ruc" id="iGf-hg-ovb"/>
+                        <outlet property="viewModel" destination="Xtz-c8-fqH" id="PUM-Cm-cXL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6O-MT-Qmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Xtz-c8-fqH" customClass="RestaurantListingViewModel" customModule="Demo" customModuleProvider="target"/>
+                <customObject id="e76-nE-fqg" customClass="APIClient" customModule="Demo" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1197.5999999999999" y="-269.41529235382313"/>
         </scene>
     </scenes>
 </document>
